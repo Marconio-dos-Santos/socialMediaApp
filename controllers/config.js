@@ -5,7 +5,6 @@ module.exports = {
     getConfig: async (req, res) => {
       try {
         // const userid = await User.find({ _id: req.user.id })
-        console.log(req.user)
         res.render("config.ejs", { user: req.user });
       } catch (err) {
         console.log(err);
@@ -26,10 +25,13 @@ module.exports = {
     },
     imageAvatar: async (req, res) => {
       try {
+
+        // Destroy Image from cloudinary
+        await cloudinary.uploader.destroy(req.user.cloudinaryId);
+        
         // Upload image to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
-        console.log(req)
-  
+        
         await User.findOneAndUpdate(
           { _id: req.user.id },
           {

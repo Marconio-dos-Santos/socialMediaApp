@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-  <div class="container">
+  <!-- <div class="container">
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
@@ -11,5 +11,61 @@
         <% } %>
         </ul>
     </div>
-  </div>  
+  </div> -->
+
+  <main>
+    <div class="container my5">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+          <section class=" my-5">
+            <div class="post">
+              <div class="card">
+                <% for(var i=0; i<posts.length; i++) {%>
+                <div class="card-body">
+                  
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="d-flex story">
+                          <img
+                          src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                          class="rounded-circle"
+                          height="22"
+                          alt="Portrait of a Woman"
+                          loading="lazy"
+                          />
+                          <div class="mt-2">
+                            <a href="" class="text-dark">
+                              <strong class="mt-5 ml-2"><%=posts[i].title%></strong>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <i class="fas fa-ellipsis-h float-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Photos -->
+                <div class="bg-image">
+                  <img src="<%=posts[i].image%>" class="w-100" />
+                  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)"></div>
+                </div>
+                <!-- interactions -->
+                <div class="card-body">
+                  <div class="container">
+                    
+                  </div>
+                </div>
+                <% } %>
+              </div>
+            </div>
+          </section>
+          
+        </div>
+      </div>
+    </div>
+  </main>
 <%- include('partials/footer') -%>
