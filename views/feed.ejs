@@ -22,8 +22,7 @@
             <div class="post">
               <div class="card">
                 <% for(var i=0; i<posts.length; i++) {%>
-                <div class="card-body">
-                  
+                <div class="card-body">   
                   <div class="container">
                     <div class="row">
                       <div class="col-md-8">
@@ -49,10 +48,12 @@
                   </div>
                 </div>
                 <!-- Photos -->
+                <a href="/post/<%= posts[i]._id%>">
                 <div class="bg-image">
                   <img src="<%=posts[i].image%>" class="w-100" />
                   <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)"></div>
                 </div>
+              </a>
                 <!-- interactions -->
                 <div class="card-body">
                   <div class="container">
