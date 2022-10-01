@@ -40,7 +40,7 @@
     <ul>
       <% for(let i=0; i<comments.length; i++) {%>
         <li class="col-6 justify-content-between mt-5">
-          User <%= comments[i].createBy%> says: "<%= comments[i].comment%>"
+          User <strong class="mt-5 ml-2"> <%= comments[i].createBy%> </strong> says: "<%= comments[i].comment%>"
           <% if(comments[i].createById == user.id) {%>
           <form
           action="/comment/deleteComment/<%= comments[i]._id %>/<%= post._id %>?_method=DELETE"
