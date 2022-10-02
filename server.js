@@ -13,6 +13,18 @@ const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comment");
 const configRoutes = require("./routes/config");
 
+const path = require("path");
+
+
+// declare react files in build as static
+app.use(express.static(path.join(__dirname, "build")));
+
+// serve index.html from the build folder
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
@@ -57,7 +69,7 @@ app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
-app.use("https://sociall-media-app.herokuapp.com/post", postRoutes);
+app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
 app.use("/config", configRoutes)
 
