@@ -1,20 +1,22 @@
-# Install
+# Social Media App
 
-`npm install`
+## Database Setup
 
----
-
-# Things to add
-
-- Create a `.env` file in config folder and add the following as `key = value`
-  - PORT = 2121 (can be any port example: 3000)
+- Create a `.env` file in `config folder` and add the following as `key = value`
+  - PORT = 2121 (this should be set to `http://localhost:2121/` currently). 
   - DB_STRING = `your database URI`
   - CLOUD_NAME = `your cloudinary cloud name`
   - API_KEY = `your cloudinary api key`
   - API_SECRET = `your cloudinary api secret`
 
----
 
-# Run
+# Install
+
+`npm install`
+
+
+## Available Scripts
+
+In the project root directory, you can run:
 
 `npm start`
